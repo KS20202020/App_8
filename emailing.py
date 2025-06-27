@@ -2,11 +2,12 @@ import smtplib
 from email.message import EmailMessage
 import imghdr
 
-PASSWORD = ''
+PASSWORD = 'yqmgshnrxaojqjpb'
 SENDER = 'working6462@gmail.com'
 RECEIVER = 'working6462@gmail.com'
 
 def send_email(image_path):
+    print('send_email function started')
     email_message = EmailMessage()
     email_message['Subject'] = 'New customer arrived!'
     email_message.set_content('Hey, we saw a new customer!')
@@ -20,6 +21,7 @@ def send_email(image_path):
     gmail.login(SENDER,PASSWORD)
     gmail.sendmail(SENDER, RECEIVER,email_message.as_string())
     gmail.quit()
+    print('send_email function ended')
 
 
 if __name__ == '__main__':
